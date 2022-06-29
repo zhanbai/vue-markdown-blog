@@ -1,12 +1,20 @@
+<script setup lang="ts">
+defineProps<{
+  id: string;
+}>();
+</script>
+
 <template>
   <div class="item">
     <i>
       <slot name="icon"></slot>
     </i>
     <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
+      <a :href="'/posts/' + id">
+        <h3>
+          <slot name="heading"></slot>
+        </h3>
+      </a>
       <slot></slot>
     </div>
   </div>
@@ -35,7 +43,7 @@ i {
 
 h3 {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0.4rem;
   color: var(--color-heading);
 }

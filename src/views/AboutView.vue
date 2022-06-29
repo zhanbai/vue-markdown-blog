@@ -1,6 +1,10 @@
+<script setup lang="ts">
+import About from "@/posts/About.md";
+</script>
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <About />
   </div>
 </template>
 

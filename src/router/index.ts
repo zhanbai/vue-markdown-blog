@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import Posts from "../api/posts.json";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,6 +19,14 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
   ],
+});
+
+Posts.data.forEach((item) => {
+  router.addRoute("gulp", {
+    path: `/posts/${item.id}`,
+    name: item.id,
+    component: () => import(`../posts/${item.id}.md`),
+  });
 });
 
 export default router;

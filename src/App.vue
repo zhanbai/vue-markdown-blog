@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
+import Header from "./components/Header.vue";
 </script>
 
 <template>
@@ -14,11 +14,11 @@ import HelloWorld from "@/components/HelloWorld.vue";
     />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <Header msg="VMB" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">首页</RouterLink>
+        <RouterLink to="/about">关于</RouterLink>
       </nav>
     </div>
   </header>
@@ -40,6 +40,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
 header {
   line-height: 1.5;
   max-height: 100vh;
+  margin-bottom: 1.5rem;
 }
 
 .logo {
@@ -85,6 +86,21 @@ nav a:first-of-type {
   border: 0;
 }
 
+.markdown-body {
+  line-height: 1.8;
+  color: var(--color-heading);
+}
+
+.markdown-body h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.markdown-body p {
+  margin-bottom: 0.3rem;
+}
+
 @media (min-width: 1024px) {
   body {
     display: flex;
@@ -94,7 +110,7 @@ nav a:first-of-type {
   #app {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    padding: 2rem;
   }
 
   header {
